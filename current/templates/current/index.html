@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<div class="container">
+    <div class="row">
+        {% for event in events %}
+        <div class="col-sm-4">
+            <div class="panel panel-default" >
+                <div class="row">
+                    <div class="col-sm-5">
+                        <a href="">
+                          <img src="{{event.banner.url}}" class="img img-thumbnail" alt=""  style="width: 150px; height: 100px;">
+                        </a>
+                    </div>
+                    <div class="col-sm-7"><div class="caption" style="margin: 3px">
+                        <h4>{{event.event_name}}</h4>
+                        <h4>{{event.date}} {{event.time}}</h4>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
