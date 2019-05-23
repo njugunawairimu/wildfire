@@ -9,6 +9,7 @@ class Event(models.Model):
     time = models.TimeField()
     charges = models.CharField(max_length=40)
     contact = models.IntegerField()
+    description=models.CharField(max_length=1000000)
 
     def __str__(self):
         return self.event_name
