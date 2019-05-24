@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="background-color: cornflowerblue">
                 <div class="panel-body">
                     <img src="{{ event.banner.url }}" class="img img-thumbnail img-responsive" alt="">
                     <h4 style="font-family: stylish;margin: 5px" >{{event.event_name}}</h4>
@@ -15,12 +15,38 @@
             </div>
         </div>
         <div class="col-sm-9">
-             <div class="panel panel-default">
-                 <div class="caption">
+             <div class="panel panel-default" style="background-color: aquamarine">
+                 <div class="panel panel-header" style="background-color: cornflowerblue">
                         <h4 style="font-family: stylish"class="text-center">{{event.event_name}}</h4>
-                     <p  style="font-family: Dancing Script;"class="text-center"><h6>{{event.description}}</h6> </p>
+                     <p  style="font-family: Dancing Script;" class="text-center"><h6>{{event.description}}</h6> </p>
+                 </div>
+                     <div class="panel-body">
+                         {% for home in event.comment_set.all%}
+                         <h4 class="text-center" style="color: chocolate">{{home.comment}}</h4>
+                         {% endfor %}
+
+                         <h4 style="float: right; margin-left: 275px; ">{{event.venue}}</h4>
+                             <h4 style=" margin-right: 400px;">{{event.charges}}</h4>
+                             <h4 style="float: right">{{event.contact}}</h4>
+                     </div>
+                 <div class="panel panel-footer" style="float: right">
+
+                    <a href="" class="btn btn-primary btn-sm">
+                      <i class="fas fa-heart"></i>
+                    </a>
+
+                   <a href="" class="btn btn-success btn-sm">
+                     <i class="fas fa-edit"></i>
+                   </a>
+                     <a href="" class="btn btn-danger btn-sm"
+                        onclick='return confirm("are you sure you want to delete ??")'>
+                        <i class="fas fa-trash"></i>
+                     </a>
+
+                  </div>
                  </div>
              </div>
         </div>
-    </div>
+
+
 </div>

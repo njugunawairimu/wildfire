@@ -17,6 +17,8 @@ class Event(models.Model):
 class Comment(models.Model):
     event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=40)
+    comment=models.CharField(max_length=40)
 
     def __str__(self):
         return self.user_name
+

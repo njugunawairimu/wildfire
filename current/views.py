@@ -15,3 +15,8 @@ def details(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
 
     return render(request,'current/details.html',{'event':event})
+
+
+def update_event(request, event_id):
+    events = get_object_or_404(Event, pk=event_id)
+    return render(request, 'current/index.html',{'events':events})
